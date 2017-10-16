@@ -1,10 +1,30 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+  padding-bottom: 10px;
+}
+.App-logo-container {
+  flex: 1;
+  /* animation: App-logo-spin infinite 5s linear; */
+  height: 80px;
+  background: rgb(4, 81, 180);
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 5s linear;
   height: 80px;
+  background: green
+}
+
+.profile {
+  border-radius: 50%;
 }
 
 .App-header {
@@ -23,6 +43,16 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { 
+    transform: rotate(0deg) translateX(0);
+    transform-origin: calc(50% + 0px) 50% 0;
+  }
+  50% { 
+    transform: rotate(1000deg) translateX(200px);
+    transform-origin: calc(50% + 200px) 50% 0;
+  }
+  to { 
+    transform: rotate(0deg) translateX(0);
+    transform-origin: calc(50% + 0px) 50% 0;
+  }
 }
