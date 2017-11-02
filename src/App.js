@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App container">
         <header className="">
           <br />
-          <h1 className="">Welcome <span role="img" aria-label="hello">🖕😊</span></h1>
+          <h1 className="">Welcome</h1>
         </header>
 
         <div>
@@ -40,7 +40,7 @@ class App extends Component {
               <div>
                 <div className="fancy">
                   <span>
-                  <h2 className=""><i className="fa fa-rocket" aria-hidden="true"></i> Projects</h2>
+                    <h2 className=""><i className="fa fa-rocket" aria-hidden="true"></i> Projects</h2>
                   </span>
                 </div>
               </div>
@@ -54,10 +54,19 @@ class App extends Component {
                 </div>
                 <div className="col-9 text-left">
                   <span>
-                    <a href="http://www.kitabote.de" target="blank">Kitabote</a>
+                    <h4>Description</h4>
+                    <a href="http://www.kitabote.de" target="blank">Kitabote.de</a>
                     <p>Der Kitabote ist eine App, mit der Eltern und Kita-Leitung einfach, sicher und kostenlos Informationen austauschen können.</p>
-                    <h4>Plattform</h4>
-                    <p>iOS, Android, Web</p>
+                    <div className="row">
+                      <div className="col">
+                        <h4>Plattform</h4>
+                        <p>iOS, Android, Web</p>
+                      </div>
+                      <div className="col">
+                        <h4>Technologies</h4>
+                        <p>React & React Native (JavaScript)</p>
+                      </div>
+                    </div>
                   </span>
                 </div>
               </div>
@@ -67,6 +76,18 @@ class App extends Component {
 
         <h3>MH Hub</h3>
         <p>Tech Advisor</p>
+
+        <hr />
+        <iframe
+          height='418' 
+          scrolling='no' 
+          title='_verse' 
+          src='//codepen.io/enryco/embed/MOWVMo/?height=418&theme-id=0&default-tab=js,result&embed-version=2' 
+          frameBorder='no' 
+          allowTransparency='true' 
+          allowFullScreen='true' 
+          style={{width: '100%'}}>See the Pen <a href='https://codepen.io/enryco/pen/MOWVMo/'>_verse</a> by enryco (<a href='https://codepen.io/enryco'>@enryco</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
         <div>
           <h2><i className="fa fa-wrench" aria-hidden="true"></i> Toolz</h2>

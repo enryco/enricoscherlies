@@ -1,3 +1,14 @@
+body {
+  background-color: #080724;
+  background-color: #080724;
+  background-color: #EBE9E9;
+  color: #000;
+  color: #EBE9E9;
+  color: rgb(4, 81, 180);
+  color: #111D4A;
+  color: rgb(7, 0, 100);
+}
+
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -5,6 +16,8 @@
 
 h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
+  /* color: rgb(218, 82, 9);
+  color: rgb(214, 101, 40); */
 }
 
 h3 {
