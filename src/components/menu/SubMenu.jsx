@@ -16,8 +16,9 @@ class SubMenu extends Component {
         return (
             <div className="es-sub-menu">
                 {
-                    _.map(this.props.items, item => {
+                    _.map(this.props.items, (item, key) => {
                         return <SubLink
+                            key={key}
                             slug={slugify(item.title)}
                             title={item.title}
                             active={getActiveSlug() === slugify(item.title)}
