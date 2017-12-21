@@ -1,9 +1,9 @@
 .es-menu {
     position: absolute;
     right: calc(100vw / 1.6803 );
-    top: calc(100vh * ( 1 - 1 / 1.6803) );
+    top: calc(100vh * ( 1 - 1 / 1.6803) - 150px );
     text-align: right;
-    height: 80vh;
+    height: 60vh;
     border-right: 1px solid $blue;
 }
 
@@ -15,7 +15,7 @@ $padding: 15px;
     position: relative;
     border-right: 1px solid $blue;
     font-size: 1.1em;
-    margin-right: -1px;
+    margin-right: -1.5px;
 
     &__link-text {
         padding-right: 25px;
@@ -24,6 +24,10 @@ $padding: 15px;
 
     &__link:hover {
         font-weight: bold;
+    }
+
+    &__placeholder {
+        visibility: hidden;
     }
 }
 
