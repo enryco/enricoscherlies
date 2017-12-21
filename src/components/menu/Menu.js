@@ -16,10 +16,20 @@ class Menu extends Component {
     document.onkeydown = e => {
       switch (e.key) {
         case 'ArrowUp':
-          this.navigate.prev()
+        case 'w':
+          this.navigate.main.prev(1)
           break;
         case 'ArrowDown':
-          this.navigate.next()
+        case 's':
+          this.navigate.main.next(1)
+          break;
+        case 'ArrowLeft':
+        case 'a':
+          this.navigate.sub.prev(2)
+          break;
+        case 'ArrowRight':
+        case 'd':
+          this.navigate.sub.next(2)
           break;
         default:
           break;
@@ -28,44 +38,100 @@ class Menu extends Component {
   }
 
   navigate = {
-    prev: () => {
-      const active = this.getActiveIndex()
-      if (active > 0) {
-        this.props.history.push("/" + slugify(this.props.items[active - 1].title))
-        this.setState({ active: active - 1 })
+
+    main: {
+      prev: (level = 0) => {
+        const active = this.getActiveIndex(level)
+        const len = this.props.items.length
+
+        if (active > 0) {
+          this.props.history.push("/" + slugify(this.props.items[active - 1].title))
+          this.setState({ active: active - 1 })
+        } else if (active === 0) {
+          this.props.history.push("/" + slugify(this.props.items[len - 1].title))
+          this.setState({ active: len - 1 })
+        }
+
+      },
+      next: (level = 0) => {
+        const active = this.getActiveIndex(level)
+        const len = this.props.items.length
+        if (active < len - 1) {
+          this.props.history.push("/" + slugify(this.props.items[active + 1].title))
+          this.setState({ active: active + 1 })
+        } else if (active === len - 1) {
+          this.props.history.push("/" + slugify(this.props.items[0].title))
+          this.setState({ active: 0 })
+        }
       }
-      
     },
-    next: () => {
-      const active = this.getActiveIndex()
-      const len = this.props.items.length
-      if (active < len - 1) {
-        this.props.history.push("/" + slugify(this.props.items[active + 1].title))
-        this.setState({ active: active + 1 })
+    sub: {
+      prev: (level = 0) => {
+        const mainItem = this.props.items[this.getActiveIndex(1)]
+        const mainItems = _.map(mainItem.items, i => i)
+
+        if (mainItems) {
+          const active = this.getActiveIndex(2)
+          const len = mainItems.length
+          if (active > 0) {
+            this.props.history.push(slugify(mainItems[active - 1].title))
+          } else if (active === 0) {
+            this.props.history.push(slugify(this.props.items[len - 1].title))
+          }
+        }
+
+      },
+      next: (level = 0) => {
+        const mainItem = this.props.items[this.getActiveIndex(1)]
+        const mainItems = _.map(mainItem.items, i => i)
+
+        if (mainItems) {
+          const active = this.getActiveIndex(2)
+          const len = mainItems.length
+          if (active < len - 1) {
+            this.props.history.push(slugify(mainItems[active + 1].title))
+          } else if (active === len - 1) {
+            this.props.history.push(slugify(this.props.items[len + 1].title))
+          }
+        }
       }
     }
   }
 
-  getActiveSlug = () => {
-    const regex = /\/(.*?)\//
-    const path = this.props.location.pathname
-    const slug = regex.exec(path + '/')[1]
-    if (path) { return slug }
+
+
+  getActiveSlug = (level) => {
+    const slug = this.props.location.pathname.split("/")[level]
+    if (slug) { return slug }
     return ''
   }
 
-  getActiveIndex = () => {
-    return _.findIndex(this.props.items, i => {
-    return slugify(i.title) === this.getActiveSlug()
-  })
+  getActiveIndex = (level) => {
+    if (level === 1 ) {
+      return _.findIndex(this.props.items, i => {
+        return slugify(i.title) === this.getActiveSlug(level)
+      })
+    }
+
+    if (level === 2 ) {
+      const mainItem = this.props.items[this.getActiveIndex(1)]
+      const items = _.map(mainItem.items, i => i)
+
+      return _.findIndex(items, i => {
+        return slugify(i.title) === this.getActiveSlug(level)
+      })
+    }
   }
 
   render() {
 
+    console.log(this.getActiveIndex(2))
+
+
     const menuItems = this.props.items
-    const activeIndex = this.getActiveIndex()
+    const activeIndex = this.getActiveIndex(1)
     const timesPlaceholder = _.times(menuItems.length - activeIndex)
-    
+
     return (
       <div className="es-menu">
         <div>
