@@ -37,10 +37,10 @@ class Menu extends Component {
       if (active > 0) {
         this.props.history.push("/" + slugify(this.props.items[active - 1].title))
       }
-      else if (active === 0) {
+      if (active === 0) {
         this.props.history.push("/")
       }
-      else if (active === -1) {
+      if (active === -1) {
         this.props.history.push("/" + slugify(this.props.items[len - 1].title))
       }
 
@@ -52,10 +52,10 @@ class Menu extends Component {
       if (active < len - 1) {
         this.props.history.push("/" + slugify(this.props.items[active + 1].title))
       }
-      else if (active === len - 1) {
+      if (active === len - 1) {
         this.props.history.push("/")
       }
-      else if (active === -1) {
+      if (active === -1) {
         this.props.history.push("/" + slugify(this.props.items[0].title))
       }
     }
