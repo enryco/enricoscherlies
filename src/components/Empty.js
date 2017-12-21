@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect, Switch } from 'react-router-dom'
+import _ from 'lodash'
 
 
 class EmptyComponent extends Component {
@@ -7,7 +8,7 @@ class EmptyComponent extends Component {
 
   render() {
     return (
-      <div className="bb-empty">
+      <div className="es-">
       </div>
     );
   }
@@ -17,7 +18,7 @@ export default EmptyComponent;
 
 const EmptyStatelessFunction = props => {
   return (
-    <div className="bb-empty">
+    <div className="es-">
     </div>
   );
 };
