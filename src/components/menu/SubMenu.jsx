@@ -6,6 +6,26 @@ import slugify from 'slugify'
 
 class SubMenu extends Component {
 
+
+  componentDidMount() {
+    // document.onkeydown = e => {
+    //   switch (e.key) {
+    //     case 'ArrowLeft':
+    //       this.navigate.prev()
+    //       console.log('<-- ->>')
+
+    //       break;
+    //     case 'ArrowRight':
+    //       this.navigate.next()
+    //       console.log('<-- ->>')
+
+    //       break;
+    //     default:
+    //       break;
+    //   }
+    // }
+  }
+
     render() {
         const getActiveSlug = () => {
             const slug = this.props.location.pathname.split("/")[2]
@@ -21,7 +41,7 @@ class SubMenu extends Component {
                             key={key}
                             slug={slugify(item.title)}
                             title={item.title}
-                            active={getActiveSlug() === slugify(item.title)}
+              active={getActiveSlug() === slugify(item.title)}
                             parent={this.props.parent}
                         />
                     })

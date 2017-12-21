@@ -16,9 +16,11 @@ class Menu extends Component {
     document.onkeydown = e => {
       switch (e.key) {
         case 'ArrowUp':
+        case 'w':
           this.navigate.prev()
           break;
         case 'ArrowDown':
+        case 's':
           this.navigate.next()
           break;
         default:
@@ -30,42 +32,52 @@ class Menu extends Component {
   navigate = {
     prev: () => {
       const active = this.getActiveIndex()
+      const len = this.props.items.length
+
       if (active > 0) {
         this.props.history.push("/" + slugify(this.props.items[active - 1].title))
-        this.setState({ active: active - 1 })
       }
-      
+      else if (active === 0) {
+        this.props.history.push("/")
+      }
+      else if (active === -1) {
+        this.props.history.push("/" + slugify(this.props.items[len - 1].title))
+      }
+
     },
     next: () => {
       const active = this.getActiveIndex()
       const len = this.props.items.length
+
       if (active < len - 1) {
         this.props.history.push("/" + slugify(this.props.items[active + 1].title))
-        this.setState({ active: active + 1 })
+      }
+      else if (active === len - 1) {
+        this.props.history.push("/")
+      }
+      else if (active === -1) {
+        this.props.history.push("/" + slugify(this.props.items[0].title))
       }
     }
   }
 
   getActiveSlug = () => {
-    const regex = /\/(.*?)\//
-    const path = this.props.location.pathname
-    const slug = regex.exec(path + '/')[1]
-    if (path) { return slug }
+    const slug = this.props.location.pathname.split("/")[1]
+    if (slug) { return slug }
     return ''
   }
 
   getActiveIndex = () => {
     return _.findIndex(this.props.items, i => {
-    return slugify(i.title) === this.getActiveSlug()
-  })
+      return slugify(i.title) === this.getActiveSlug()
+    })
   }
 
   render() {
-
     const menuItems = this.props.items
     const activeIndex = this.getActiveIndex()
     const timesPlaceholder = _.times(menuItems.length - activeIndex)
-    
+
     return (
       <div className="es-menu">
         <div>
