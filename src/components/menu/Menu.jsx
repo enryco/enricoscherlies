@@ -5,61 +5,9 @@ import _ from 'lodash'
 import slugify from 'slugify'
 import { Collapse } from 'react-collapse';
 import { presets } from 'react-motion';
+import Navigation from './Navigation'
 
 class Menu extends Component {
-
-  state = {
-    active: 0
-  }
-
-  componentDidMount() {
-    document.onkeydown = e => {
-      switch (e.key) {
-        case 'ArrowUp':
-        case 'w':
-          this.navigate.prev()
-          break;
-        case 'ArrowDown':
-        case 's':
-          this.navigate.next()
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
-  navigate = {
-    prev: () => {
-      const active = this.getActiveIndex()
-      const len = this.props.items.length
-
-      if (active > 0) {
-        this.props.history.push("/" + slugify(this.props.items[active - 1].title))
-      }
-      if (active === 0) {
-        this.props.history.push("/")
-      }
-      if (active === -1) {
-        this.props.history.push("/" + slugify(this.props.items[len - 1].title))
-      }
-
-    },
-    next: () => {
-      const active = this.getActiveIndex()
-      const len = this.props.items.length
-
-      if (active < len - 1) {
-        this.props.history.push("/" + slugify(this.props.items[active + 1].title))
-      }
-      if (active === len - 1) {
-        this.props.history.push("/")
-      }
-      if (active === -1) {
-        this.props.history.push("/" + slugify(this.props.items[0].title))
-      }
-    }
-  }
 
   getActiveSlug = () => {
     const slug = this.props.location.pathname.split("/")[1]
@@ -80,6 +28,7 @@ class Menu extends Component {
 
     return (
       <div className="es-menu">
+        <Navigation items={this.props.items} />
         <div>
           <Collapse isOpened={true} springConfig={presets.gentle}>
             {

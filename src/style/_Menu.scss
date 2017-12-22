@@ -13,9 +13,9 @@ $padding: 15px;
     padding-top: $padding;
     padding-bottom: $padding;
     position: relative;
-    border-right: 1px solid $blue;
+    // border-right: 1px solid $blue;
     font-size: 1.1em;
-    margin-right: -1.5px;
+    margin-right: 0px;
 
     &__link-text {
         padding-right: 25px;
