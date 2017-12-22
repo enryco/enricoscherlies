@@ -30,6 +30,8 @@ class SubNavigation extends Component {
 
   navigate = {
     prev: () => {
+      if (!this.props.items) { return null }
+
       const active = this.getActiveIndex()
       const len = this.props.items.length
 
@@ -47,6 +49,8 @@ class SubNavigation extends Component {
 
     },
     next: () => {
+      if (!this.props.items) { return null }
+
       const active = this.getActiveIndex()
       const len = this.props.items.length
 
@@ -83,14 +87,7 @@ class SubNavigation extends Component {
   }
 
   render() {
-    const menuItems = this.props.items
-    const activeIndex = this.getActiveIndex()
-    const timesPlaceholder = _.times(menuItems.length - activeIndex)
-
-    return (
-      <div className="es-menu-navigation">
-      </div>
-    );
+    return null
   }
 }
 

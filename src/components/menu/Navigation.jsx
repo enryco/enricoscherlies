@@ -82,10 +82,7 @@ class Navigation extends Component {
 
     return (
       <div className="es-menu-navigation">
-        {
-          subMenuItems &&
-          <SubNavigation items={subMenuItems} parentSlug={this.getActiveSlug()} />
-        }
+        <SubNavigation items={subMenuItems} parentSlug={this.getActiveSlug()} />
       </div>
     );
   }
