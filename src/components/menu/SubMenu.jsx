@@ -21,13 +21,18 @@ class SubMenu extends Component {
       <div className="es-sub-menu">
         {
           _.map(this.props.items, (item, key) => {
-            return <SubLink
-              key={key}
-              slug={slugify(item.title)}
-              title={item.title}
-              active={getActiveSlug() === slugify(item.title)}
-              parent={this.props.parent}
-            />
+            const isActive = getActiveSlug() === slugify(item.title)
+            return <div key={key}>
+              <SubLink
+                slug={slugify(item.title)}
+                title={item.title}
+                active={getActiveSlug() === slugify(item.title)}
+                parent={this.props.parent}
+              />
+              {
+                isActive && <Content item={item} />
+              }
+            </div>
           })
         }
       </div>
@@ -42,5 +47,16 @@ export default SubMenuWithRouter;
 const SubLink = props => {
   return <div className={`es-sub-menu-item es-sub-menu-item${props.active && '--active'}`} >
     <Link className="es-sub-menu-item__link" to={`/${props.parent}/${props.slug}`}>{props.title}</Link>
+  </div>
+}
+
+
+const Content = props => {
+  return <div className={`es-sub-menu-item-content`} >
+    <div
+      className="es-sub-menu-item-content__textfield"
+      dangerouslySetInnerHTML={{ __html: props.item.textfield }
+      }
+    />
   </div>
 }

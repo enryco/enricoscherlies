@@ -1,0 +1,11 @@
+.es-sub-menu-item-content {
+  position: absolute;
+  left: 20px;
+  top: 2em;
+  font-size: 0.6803em;
+  &__textfield {
+    color: $grey;
+    font-weight: 400;
+    font-style: italic;
+  }
+}

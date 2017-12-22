@@ -9,8 +9,6 @@ import { presets } from 'react-motion';
 class SubNavigation extends Component {
 
   componentDidMount() {
-    console.log('componentDidMount')
-
     document.addEventListener('keydown', e => {
       switch (e.key) {
         case 'ArrowLeft':
@@ -28,7 +26,6 @@ class SubNavigation extends Component {
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount')
   }
 
   navigate = {
@@ -89,10 +86,6 @@ class SubNavigation extends Component {
     const menuItems = this.props.items
     const activeIndex = this.getActiveIndex()
     const timesPlaceholder = _.times(menuItems.length - activeIndex)
-
-    console.log(activeIndex)
-    console.log(this.getActiveSlug())
-
 
     return (
       <div className="es-menu-navigation">

@@ -75,3 +75,13 @@ a {
 .es-sub-menu-item--active .es-sub-menu-item__link {
   border-bottom: 2px solid #172376;
   color: #172376; }
+
+.es-sub-menu-item-content {
+  position: absolute;
+  left: 20px;
+  top: 2em;
+  font-size: 0.6803em; }
+  .es-sub-menu-item-content__textfield {
+    color: #777777;
+    font-weight: 400;
+    font-style: italic; }
