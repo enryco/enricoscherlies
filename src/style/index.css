@@ -28,44 +28,45 @@ a {
 .es-menu {
   position: absolute;
   right: calc(100vw / 1.6803);
-  top: calc(100vh * ( 1 - 1 / 1.6803) - 150px);
+  top: 20vh;
   text-align: right;
   height: 60vh;
   border-right: 1px solid #172376; }
 
 .es-menu-item {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   position: relative;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  font-weight: 700;
   margin-right: 0px; }
   .es-menu-item__link-text {
-    padding-right: 25px;
-    font-size: 1.3em; }
+    padding-right: 25px; }
   .es-menu-item__link:hover {
-    font-weight: bold; }
+    font-weight: 900; }
   .es-menu-item__placeholder {
     visibility: hidden; }
 
 .es-menu-item__link--active {
   margin-right: -1.5px;
   border-right: 3px solid #172376;
-  font-weight: bold; }
+  font-weight: 900; }
   .es-menu-item__link--active .es-menu-item__link-text {
     color: #172376; }
 
 .es-sub-menu {
   position: absolute;
-  top: 15px;
+  bottom: 5px;
   left: 100%;
   width: 50vw;
-  margin-left: 15px;
+  margin-left: 5px;
   display: flex;
-  text-align: left; }
+  text-align: left;
+  height: 1em; }
 
 .es-sub-menu-item {
   position: relative;
-  font-size: 1.1em; }
+  font-size: 0.6803em; }
   .es-sub-menu-item__link {
     margin-left: 20px; }
   .es-sub-menu-item__link:hover {

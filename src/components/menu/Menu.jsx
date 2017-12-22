@@ -24,7 +24,7 @@ class Menu extends Component {
   render() {
     const menuItems = this.props.items
     const activeIndex = this.getActiveIndex()
-    const timesPlaceholder = _.times(menuItems.length - activeIndex)
+    const timesPlaceholder = _.times(menuItems.length - activeIndex - 1)
 
     return (
       <div className="es-menu">
