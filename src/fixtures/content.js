@@ -5,7 +5,8 @@ export const appState = {
     title: 'why',
     items: {
       0: {
-        title: 'to solve problems'
+        title: 'to solve problems',
+        textfield: '<p>try navigating with ⬇️⬆️ & ⬅️➡️ keys! (or wasd if u r a gamer)</p>'
       }
     }
   },
@@ -46,10 +47,14 @@ export const appState = {
   who: {
     title: 'who',
     items: {
-      me: {
+      github: {
         title: 'github',
         textfield: '<p> <a href="http://github.com/enryco">github/enryco</a> </p>'
-      }
+      },
+      fb: {
+        title: 'fb',
+        textfield: '<p> <a href="https://www.instagram.com/enricoscherlies/">insta</a> </p>'
+      },
     }
   },
 }

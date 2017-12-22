@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { appState } from './fixtures/content'
 import { Route, Link, Redirect, Switch, BrowserRouter } from 'react-router-dom'
 import Menu from './components/menu/Menu'
+import Logo from './components/Logo'
 import _ from 'lodash'
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      
+
       <BrowserRouter>
         <div className="es-app">
 
@@ -24,6 +25,9 @@ class App extends Component {
 
           {/* MENU */}
           <Menu items={_.map(this.state, item => item)} />
+
+          {/* LOGO */}
+          <Logo />
 
         </div>
       </BrowserRouter>
