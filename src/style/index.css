@@ -92,3 +92,5 @@ a {
     color: #777777;
     font-weight: 400;
     font-style: italic; }
+    .es-sub-menu-item-content__textfield h2 {
+      font-style: normal; }

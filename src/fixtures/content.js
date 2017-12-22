@@ -6,7 +6,7 @@ export const appState = {
     items: {
       0: {
         title: 'i ♥️ solving problems',
-        textfield: '<p>try navigating with ⬇️⬆️ & ⬅️➡️ keys! (or wasd if u r a gamer)</p>'
+        textfield: '<p>try navigating with ⬇️⬆️ & ⬅️➡️ keys! (or wasd ;))</p><span>pls note. website is under construction</span><h2>👷‍♂️🚧 ⚠️️</h2>'
       }
     }
   },
@@ -49,11 +49,15 @@ export const appState = {
     items: {
       github: {
         title: 'github',
-        textfield: '<p> <a href="http://github.com/enryco">github/enryco</a> </p>'
+        textfield: '<h2><a href="http://github.com/enryco">🐙↔️🐈</a></h2>'
       },
-      fb: {
-        title: 'fb',
-        textfield: '<p> <a href="https://www.instagram.com/enricoscherlies/">insta</a> </p>'
+      ig: {
+        title: 'ig',
+        textfield: '<h2><a href="https://www.instagram.com/enricoscherlies/">📷📷📷</a></h2>'
+      },
+      mail: {
+        title: 'mail',
+        textfield: '<h2><a href="mailto:e.scherlies@me.com">💌💌💌</a></h2>'
       },
     }
   },
