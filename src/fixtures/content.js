@@ -5,7 +5,7 @@ export const appState = {
     title: 'why',
     items: {
       0: {
-        title: 'to solve problems',
+        title: 'i ♥️ solving problems',
         textfield: '<p>try navigating with ⬇️⬆️ & ⬅️➡️ keys! (or wasd if u r a gamer)</p>'
       }
     }
