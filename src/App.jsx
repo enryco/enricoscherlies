@@ -13,22 +13,24 @@ class App extends Component {
 
       <BrowserRouter>
         <div className="es-app">
+          <div className="es-app-content">
 
-          {/* ROUTING */}
+            {/* ROUTING */}
 
-          <Switch>
-            <Route path="why" render={() => null} />
-            <Route path="what" render={() => null} />
-            <Route path="how" render={() => null} />
-            <Route path="who" render={() => null} />
-          </Switch>
+            <Switch>
+              <Route path="why" render={() => null} />
+              <Route path="what" render={() => null} />
+              <Route path="how" render={() => null} />
+              <Route path="who" render={() => null} />
+            </Switch>
 
-          {/* MENU */}
-          <Menu items={_.map(this.state, item => item)} />
+            {/* MENU */}
+            <Menu items={_.map(this.state, item => item)} />
 
-          {/* LOGO */}
-          <Logo />
+            {/* LOGO */}
+            <Logo />
 
+          </div>
         </div>
       </BrowserRouter>
     );
