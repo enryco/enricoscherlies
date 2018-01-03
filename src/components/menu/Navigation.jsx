@@ -27,7 +27,13 @@ class Navigation extends Component {
           break;
       }
     })
+
+
+    if (this.props.location.pathname === "/") {
+      this.props.history.push("/why/i-love-solving-problems")
+    }
   }
+
 
   navigate = {
     prev: () => {
