@@ -5,7 +5,6 @@ import _ from 'lodash'
 import slugify from 'slugify'
 import { Collapse } from 'react-collapse';
 import { presets } from 'react-motion';
-import keydown, { Keys } from 'react-keydown';
 import SubNavigation from './SubNavigation'
 
 
